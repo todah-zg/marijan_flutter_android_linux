@@ -8,7 +8,7 @@ workflows:
         - keystore # <-- (Includes CM_KEYSTORE, CM_KEYSTORE_PASSWORD, CM_KEY_PASSWORD, CM_KEY_ALIAS)
         - google_play # <-- (Includes GCLOUD_SERVICE_ACCOUNT_CREDENTIALS)
       vars:
-        CM_KEYSTORE_PATH: /tmp/keystore.keystore
+        CM_KEYSTORE_PATH: $CM_BUILD_DIR/keystore.keystore
         PACKAGE_NAME: 'io.codemagic.marijan.flutterlinux' # <-- Put your package name here e.g. "io.codemagic.flutteryaml"
         GOOGLE_PLAY_TRACK: 'internal' # <-- Any default or custom track that is not in ‘draft’ status
       flutter: stable
@@ -21,7 +21,7 @@ workflows:
           echo $PROJECT_BUILD_NUMBER
       - name: Set up key properties
         script: |
-          echo $CM_KEYSTORE | base64 --decode > /tmp/keystore.keystore
+          echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH
       - name: Set up local.properties
         script: |
           echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
