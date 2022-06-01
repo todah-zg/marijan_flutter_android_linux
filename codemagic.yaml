@@ -21,6 +21,7 @@ workflows:
           echo $PROJECT_BUILD_NUMBER
       - name: Set up key properties
         script: |
+          #!/usr/bin/env zsh
           echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH
       - name: Set up local.properties
         script: |
