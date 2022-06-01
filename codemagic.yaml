@@ -37,7 +37,7 @@ workflows:
       - build/**/outputs/apk/**/*.apk
       - build/**/outputs/**/mapping.txt
       - flutter_drive.log
-    publishing:
+#    publishing:
       # See the following link for details about email publishing - https://docs.codemagic.io/yaml-publishing/email
       #      email:
       #        recipients:
