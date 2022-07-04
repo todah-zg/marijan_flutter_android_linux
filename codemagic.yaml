@@ -15,6 +15,13 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
+      - name: Test conditions
+        script: |
+          echo "Hello from test"
+        when:
+          changeset:
+            includes:
+              - 'test/'
       - name: Check Build Number
         script: |
           echo $BUILD_NUMBER
