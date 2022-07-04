@@ -10,7 +10,7 @@ workflows:
       vars:
         CM_KEYSTORE_PATH: $CM_BUILD_DIR/keystore.keystore
         PACKAGE_NAME: 'io.codemagic.marijan.flutterlinux' # <-- Put your package name here e.g. "io.codemagic.flutteryaml"
-        GOOGLE_PLAY_TRACK: 'internal' # <-- Any default or custom track that is not in ‘draft’ status
+        GOOGLE_PLAY_TRACK: 'internal' # <-- Any default or custom track that is not in ‘draft’ status 
       flutter: stable
       xcode: latest
       cocoapods: default
